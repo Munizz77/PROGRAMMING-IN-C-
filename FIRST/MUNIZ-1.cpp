@@ -6,7 +6,6 @@ int main(){
 
     cout << "Eae Prof" << endl;
     
-
     return 0;
     
 
