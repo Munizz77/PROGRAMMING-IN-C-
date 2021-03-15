@@ -1,14 +1,13 @@
-#include <iostream>  // ENTRADAS ENTRADA E SAIDA DE DADOS Nº OU PALAVRAS 
+#include <iostream>
 
 using namespace std;
 
-int main() {  // Usar sempre 
+int main(){
 
-          
-          cout << "Plinio Silva Muniz"  << endl;
-         
-          
-        
-         return 0; // ele siginica que o programa nao exibiu erros
+    cout << "Eae Prof" << endl;
+    
+
+    return 0;
+    
 
 }
