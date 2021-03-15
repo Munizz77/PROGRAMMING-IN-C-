@@ -4,10 +4,10 @@ using namespace std;
 
 int main() {  // Usar sempre 
 
-          
-          cout << "Plinio Silva Muniz"  << endl;
-         
-          
+          cout << "Plinio\n";
+          cout << "Silva\n";
+          cout << "Muniz\n";
+          cout << "2K21" << endl;
         
          return 0; // ele siginica que o programa nao exibiu erros
 
