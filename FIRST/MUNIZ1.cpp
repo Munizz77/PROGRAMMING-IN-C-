@@ -1,7 +1,11 @@
 #include <iostream>  // ENTRADAS ENTRADA E SAIDA DE DADOS Nº OU PALAVRAS 
 
+using namespace std;
+
 int main() {  // Usar sempre 
 
-        return 0; // ele siginica que o programa na
+        cout << "Plinio Silva Muniz\n" << endl;
+
+        return 0; // ele siginica que o programa nao exibiu erros
 
 }
