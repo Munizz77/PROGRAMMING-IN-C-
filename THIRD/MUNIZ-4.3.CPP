@@ -6,7 +6,7 @@ int main(){
 
     float t, a;
 
-cout << "\nDigite um numero para Farenheit para saber em Celsius " << endl;
+cout << "\nDigite um numero para Farenheit para saber em Celsius  " << endl;
 cin >> t;
   
  
