@@ -19,7 +19,7 @@ r2 = (n1 *  3) + d1;
 r3 = d1*d1*d1;
 
 
-cout << "Produto do dobro do primeiro com metade do segundo: "<< r3 << endl;
+cout << "Produto do dobro do primeiro com metade do segundo: "<< r1 << endl;
 cout << "A soma do triplo do primeiro com o terceiro: "<< r2 << endl;
 cout << "O terceiro elevado ao cubo: "<< r3 << endl;
 
