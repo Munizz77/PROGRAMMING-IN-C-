@@ -2,28 +2,34 @@
 
 using namespace std;
 
-
 int main(){
 
-    float a, b, a1,b1, d1, r3;
+
+    float a, b, a1, b1, c1, d1;
 
 cout << "\nQuanto você ganha por hora?" << endl;
 cin >> a;
-cout << "\nQuantas horas voce trabalha por mês?" << endl;
-cin >> b;  
+/*salarioBruto*/
+cout << "\nQuantas horas voce trabalha por mes?" << endl;
+cin >> b;
+/*QH*/
 
 a1 = a * b;
-b1 = a1 - 11
+/*SalarioBruto*/
+b1 = a1 * 0.08;
+/*Inss*/
+c1 = b1 * 0.11;
+/*I.Renda*/ 
+d1 = a1 * 0.05;
+/*Sindicato*/
 
+cout << "Salario bruto do mes"<< a1 << endl;
+cout << "O seu Inss : "<< b1 << endl;
+cout << "I.renda : "<< c1 << endl;
+cout << "Sindicato : "<< d1 << endl;
 
-r1 = n1 * 2 * (n2 / 2);
-r2 = (n1 *  3) + d1;
-r3 = d1*d1*d1;
+cout << "O seu salario liquido : "<< a1 - b1 - c1 - d1 << endl;
+    return 0;
+    
 
-
-cout << "Salario bruto do mês"<< a1 << endl;
-cout << "A soma do triplo do primeiro com o terceiro: "<< r2 << endl;
-cout << "O terceiro elevado ao cubo: "<< r3 << endl;
-
-        return(0);
 }
