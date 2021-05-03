@@ -10,10 +10,10 @@ cout << "\nInforme um numero inteiro " << endl;
 cin >> a;
 
 if ( a >= 100 && a <= 200){
-    printf("Você digitou um número entre 100 e 200");
+   cout <<"Você digitou um número entre 100 e 200"<<endl;
 
   }else {
-    printf("Voce digitou um numero fora da faixa");
+    cout <<"Voce digitou um numero fora da faixa"<<endl;
   } 
 
 return 0;

@@ -16,13 +16,13 @@ cin >> c;
 exp = (a + b + c) / 3;
 
   if (exp >= 0 && exp <= 25){
-    printf("Nivel: Novato");
+    cout <<"Nivel: Novato"<<endl;
   }else if(exp >= 26 && exp <= 50){
-    printf("Nivel: Mago");
+   cout <<"Nivel: Mago"<<endl;
   }else if (exp >= 51 && exp <= 75){
-    printf("Nivel: Mago Supremo");
+    cout <<"Nivel: Mago Supremo"<<endl;
   }else if (exp >= 76 && exp <= 100){
-    printf("Nivel: Lord das Magias");
+    cout <<"Nivel: Lord das Magias"<<endl;
   }
 
     return 0;
