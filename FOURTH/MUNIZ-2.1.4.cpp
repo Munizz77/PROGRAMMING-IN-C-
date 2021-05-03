@@ -5,8 +5,6 @@ using namespace std;
 
 int main(){
 
-    int main(){
-
     float a, b, c, d;
 
 cout << "\nQual o tamanho em metros da sua area quadrada?" << endl;
