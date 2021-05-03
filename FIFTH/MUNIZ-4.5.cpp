@@ -22,7 +22,7 @@ int main(){
     "|	%d	|	%d	|	%d	|\n"
     "|	%d	|	%d	|	%d	|\n"
     "|	%d	|	%d	|	%d	|\n"
-"\nDEFESA WIN \n MAQUINA WIN"<< a,b,c,d,e,f,g,h,i << endl;
+"\nDEFESA WIN \n MAQUINA WIN"<< a,b,c,d,e,f,g,h,i;
 
   }else{
     
@@ -51,10 +51,9 @@ int main(){
     "|	%d	|	%d	|	%d	|\n"
     "|	%d	|	%d	|	%d	|\n"
     "|	%d	|	%d	|	%d	|\n"
-"\nGOLLLL!!! \n YOU WIN"<< a,b,c,d,e,f,g,h,i << endl;
+"\nGOLLLL!!! \n YOU WIN"<< a,b,c,d,e,f,g,h,i;
   }
 
-}
     return 0;
     
 
