@@ -8,19 +8,14 @@ using namespace std;
 
 int main(){
 	
-	int tamanhoVetor = 20, vetorA[tamanhoVetor], posicaoVetor, min = 97, max = 123;
-	
+	int vetorA[tVetor], tVetor = 20,  min = 97, pVetor, max = 123;
+    
 	srand(time(NULL));
+	cout << "Valores gerados com máscara do tipo inteiro" << vetorA[pVetor] << endl;
 
-	printf("Valores gerados aleatoriamente e apresentados com máscara do tipo inteiro %%d: \n\n");
-	for(posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++){
-		
-		vetorA[posicaoVetor] =  min + (rand() % (max - min));
-		
-		cout << vetorA[posicaoVetor]<< "  char de " << vetorA[posicaoVetor]<< endl;
-	
+	for(pVetor = 0; pVetor < tVetor; pVetor++){	
+		vetorA[pVetor] =  min + (rand() % (max - min));
+		cout << vetorA[pVetor]<< "  char de " << vetorA[pVetor]<< endl;
 	}
-	printf("\n");
-	
 	return 0;
 }
