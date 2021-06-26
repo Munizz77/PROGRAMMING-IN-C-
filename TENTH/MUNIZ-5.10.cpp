@@ -46,14 +46,13 @@ void imprimirVetor(float vetor[], int tVetor)
  
 int main(){
 
-  int tamanhoVetor = 10, valorMinimo = -1, valorMaximo = 1;
-  float vetor[tamanhoVetor];
-
+  int tVetor = 10, vMinimo = -1, vMaximo = 1;
+  float vetor[tVetor];
   srand(time(NULL));
-  gerarVetor(vetor, tamanhoVetor, valorMinimo, valorMaximo);
+  gerarVetor(vetor, tVetor, vMinimo, vMaximo);
     
-  printf("Os valores gerados aleatoriamente no vetor são: \n");
-  imprimirVetor(vetor, tamanhoVetor);
+  cout << "Os valores gerados no vetor sao" << endl;
+  imprimirVetor(vetor, tVetor);
 
   return 0;
 }
