@@ -16,7 +16,7 @@ void imprimirVetor(int vetor[], int tamanhoVetor)
 {
     int posicaoVetor;
     for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
-        	printf("%d ", vetor[posicaoVetor]);
+        	cin >> vetor[posicaoVetor];
     }
 }
 
@@ -27,7 +27,7 @@ void imprimirValoresRepetidos(int vetor[], int tamanhoVetor){
     for (posicaoA = 0; posicaoA < tamanhoVetor; posicaoA++) {
         	for(posicaoB = posicaoA + 1; posicaoB < tamanhoVetor; posicaoB++){
         		if(vetor[posicaoA] == vetor[posicaoB]){
-        			printf("%d ", vetor[posicaoB]);
+        			cin >>  vetor[posicaoB];
 				}
 			}
     }
@@ -42,8 +42,13 @@ int main(){
     srand(time(NULL));
     gerarVetor(vetor, tamanhoVetor, valorMinimo, valorMaximo);
     
-    printf("Os valores gerados aleatoriamente no vetor são: \n");
+   cin >> "Os valores gerados sao" << endl;
     imprimirVetor(vetor, tamanhoVetor);
     
-    printf("\n");
-    printf("Valores repetidos no vetor: \n");
+    
+    cin >> "Valores repetidos no vetor: \n";
+        imprimirValoresRepetidos(vetor, tamanhoVetor);
+
+
+    return 0;
+}
