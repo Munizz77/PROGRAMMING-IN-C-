@@ -1,77 +1,79 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
+#include <time.h>
 
-
-using namespace std;
-
-void gerarMatriz(int tmatriz, int matriz[tmatriz][tmatriz], int vmaximo){
-	int linha, coluna, valeatorio;
+void gerarM(int tamanhoM, int M[tamanhoM][tamanhoM], int Maxvalor){
+	int linha, coluna, alevalor;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
-    for (coluna = 0; coluna < tmatriz; coluna++) {  
+  for (linha = 0; linha < tamanhoM; linha++) {
+    for (coluna = 0; coluna < tamanhoM; coluna++) {  
         
-      valeatorio = rand() % vmaximo;
-      matriz[linha][coluna] = valeatorio;
+      alevalor = rand() % Maxvalor;
+      M[linha][coluna] = alevalor;
     }
   }
 }
 
-void checarLinha(int tmatriz, int matriz[tmatriz][tmatriz]){
+void checarLinha(int tamanhoM, int M[tamanhoM][tamanhoM]){
   int linha, coluna, soma;
  
-  for(linha = 0 ; linha < tmatriz ; linha++){
+  for(linha = 0 ; linha < tamanhoM ; linha++){
     soma = 0;
  
-    for(coluna = 0 ; coluna < tmatriz ; coluna++){
-      soma += matriz[linha][coluna];
+    for(coluna = 0 ; coluna < tamanhoM ; coluna++){
+      soma += M[linha][coluna];
+
 		}
-		if(soma == tmatriz || soma == 0){
-      cout << "Linha com valores iguais" << linha + 1 << endl;
+		if(soma == tamanhoM || soma == 0){
+      printf("Linha com valores iguais: %d\n", linha + 1);
 		}
   }
 }
 
-void checarColuna(int tmatriz, int matriz[tmatriz][tmatriz]){
+void checarColuna(int tamanhoM, int M[tamanhoM][tamanhoM]){
   int linha, coluna, soma;
  
-  for(coluna = 0; coluna < tmatriz ; coluna++){
+  for(coluna = 0; coluna < tamanhoM ; coluna++){
     soma = 0;
  
-    for(linha = 0; linha < tmatriz ; linha++){
-      soma += matriz[linha][coluna];
+    for(linha = 0; linha < tamanhoM ; linha++){
+      soma += M[linha][coluna];
 
 		} 
-		if(soma == tmatriz || soma == 0){
-      cout << "Coluna com valores iguais" << coluna + 1 << endl;
+		if(soma == tamanhoM || soma == 0){
+      printf("Coluna com valores iguais: %d\n", coluna + 1);
 		}
   }
 }
 
-void imprimirMatriz(int tmatriz, int matriz[tmatriz][tmatriz]){
+
+void imprimirM(int tamanhoM, int M[tamanhoM][tamanhoM]){
 	int linha, coluna;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
+  for (linha = 0; linha < tamanhoM; linha++) {
     	
-    for (coluna = 0; coluna < tmatriz; coluna++) {  
+    for (coluna = 0; coluna < tamanhoM; coluna++) {  
         
-      cin >> matriz[linha][coluna]);
+      printf("%d | ", M[linha][coluna]);
     }
   }
 }
 
 int main(){
 	
-  int tmatriz = 3, matriz[tmatriz][tmatriz], vmaximo = 2;
-  srand(time(NULL));
-  gerarMatriz(tmatriz, matriz, vmaximo);
-    
-  cout << "Imprimindo matriz original com valores decimais gerados aleatoriamente entre 0 e 1:" << endl;
-	imprimirMatriz(tmatriz, matriz);
-	printf("\n");
-	checarLinha(tmatriz, matriz);
-	printf("\n");
-	checarColuna(tmatriz, matriz);
+  int tamanhoM = 3, M[tamanhoM][tamanhoM], Maxvalor = 2;
 
+  srand(time(NULL));
+  gerarM(tamanhoM, M, Maxvalor);
+    
+  printf("Mostrando a M com valores decimais gerados aleatoriamente entre 0 e 1: \n");
+	imprimirM(tamanhoM, M);
+	
+	printf("\n");
+	checarLinha(tamanhoM, M);
+	
+	printf("\n");
+	checarColuna(tamanhoM, M);
+	
   return 0;
 }
