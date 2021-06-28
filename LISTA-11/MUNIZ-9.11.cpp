@@ -1,40 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
+#include <time.h>
 
-
-using namespace std;
-
-
-void gerarMatriz(int tmatriz, float matriz[tmatriz][tmatriz], int vminimo, int vmaximo){
+void gerarMatriz(int tamanhoMatriz, float matriz[tamanhoMatriz][tamanhoMatriz], int valorMinimo, int valorMaximo){
 	int linha, coluna;
-	float valeatorio;
+	float valorAleatorio;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
-    for (coluna = 0; coluna < tmatriz; coluna++) {  
+  for (linha = 0; linha < tamanhoMatriz; linha++) {
+    for (coluna = 0; coluna < tamanhoMatriz; coluna++) {  
         
-      valeatorio = ((float)rand() / RAND_MAX) * (vmaximo - vminimo) + vminimo;
-      matriz[linha][coluna] = valeatorio;
+      valorAleatorio = ((float)rand() / RAND_MAX) * (valorMaximo - valorMinimo) + valorMinimo;
+      matriz[linha][coluna] = valorAleatorio;
     }
   }
 
 }
 
-void dobrarValoresMatriz(int tmatriz, float matriz[tmatriz][tmatriz]){
+void dobrarValoresMatriz(int tamanhoMatriz, float matriz[tamanhoMatriz][tamanhoMatriz]){
 	int linha, coluna;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
-    for (coluna = 0; coluna < tmatriz; coluna++) { 
+  for (linha = 0; linha < tamanhoMatriz; linha++) {
+    for (coluna = 0; coluna < tamanhoMatriz; coluna++) { 
 			matriz[linha][coluna] = matriz[linha][coluna] * 2;
     }
   }
+
 }
 
-void substrairPorUm(int tmatriz, float matriz[tmatriz][tmatriz]){
+void substrairPorUm(int tamanhoMatriz, float matriz[tamanhoMatriz][tamanhoMatriz]){
 	int linha, coluna;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
-    for (coluna = 0; coluna < tmatriz; coluna++) { 
+  for (linha = 0; linha < tamanhoMatriz; linha++) {
+    for (coluna = 0; coluna < tamanhoMatriz; coluna++) { 
       if(matriz[linha][coluna] < 0){
         matriz[linha][coluna] = matriz[linha][coluna] + 1;
 			}else{
@@ -43,36 +40,48 @@ void substrairPorUm(int tmatriz, float matriz[tmatriz][tmatriz]){
 
     }
   }
+
 }
 
-void imprimirMatriz(int tmatriz, float matriz[tmatriz][tmatriz]){
+
+
+void imprimirMatriz(int tamanhoMatriz, float matriz[tamanhoMatriz][tamanhoMatriz]){
 	int linha, coluna;
 	
-  for (linha = 0; linha < tmatriz; linha++) {
-    for (coluna = 0; coluna < tmatriz; coluna++) {  
-      cin >> matriz[linha][coluna];
+  for (linha = 0; linha < tamanhoMatriz; linha++) {
+    for (coluna = 0; coluna < tamanhoMatriz; coluna++) {  
+      printf("%9f| ", matriz[linha][coluna]);
     }
+    printf("\n");
   }
+
+  printf("\n");
 }
+
+
  
 int main(){
 	
-  int tmatriz = 2, vminimo = -1, vmaximo = 1;
-  float matriz[tmatriz][tmatriz], media;
+  int tamanhoMatriz = 2, valorMinimo = -1, valorMaximo = 1;
+  float matriz[tamanhoMatriz][tamanhoMatriz], media;
 
   srand(time(NULL));
-  gerarMatriz(tmatriz, matriz, vminimo, vmaximo);
+  gerarMatriz(tamanhoMatriz, matriz, valorMinimo, valorMaximo);
     
-  cout << "Matriz original com valores decimais gerados entre"<< vminimo << "a" << vmaximo << endl;
-	imprimirMatriz(tmatriz, matriz);
+  printf("Imprimindo matriz original com valores decimais gerados aleatoriamente entre %d e %d: \n", valorMinimo, valorMaximo);
+	imprimirMatriz(tamanhoMatriz, matriz);
 	
-	dobrarValoresMatriz(tmatriz, matriz);
-	cout << "Imprimindo o dobro dos valores da matriz original" <<endl;
-	imprimirMatriz(tmatriz, matriz);
-
-	substrairPorUm(tmatriz, matriz);
-	cout << "Imprimindo os valores dobrados substraído por 1" << endl;
-	imprimirMatriz(tmatriz, matriz);
+	printf("\n");
+	
+	dobrarValoresMatriz(tamanhoMatriz, matriz);
+	printf("Imprimindo o dobro dos valores da matriz original: \n");
+	imprimirMatriz(tamanhoMatriz, matriz);
+	
+	printf("\n");
+	
+	substrairPorUm(tamanhoMatriz, matriz);
+	printf("Imprimindo os valores dobrados substraído por 1: \n");
+	imprimirMatriz(tamanhoMatriz, matriz);
 	
 		
   return 0;
