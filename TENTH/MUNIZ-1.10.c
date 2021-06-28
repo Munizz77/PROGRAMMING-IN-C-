@@ -1,27 +1,21 @@
-#include <iostream>
-#include<stdio.h>  
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-using namespace std;
-
-
 void gerarVetores(int vetor[], int vetorFrequencia[], int tamanhoVetor, int valorMinimo, int valorMaximo){
- 
-  int pVetor, num;
-
-
-  for (pVetor = 0; pVetor < tamanhoVetor; pVetor++) {
+  int posicaoVetor, num;
+  for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
     num =  valorMinimo + (rand() % (valorMaximo - valorMinimo));
-    vetor[pVetor] = num;
-    vetorFrequencia[pVetor] = -1;
+    vetor[posicaoVetor] = num;
+    vetorFrequencia[posicaoVetor] = -1;
   }
 }
 
 void imprimirVetor(int vetor[], int tamanhoVetor)
 {
-  int pVetor;
-  for (pVetor = 0; pVetor < tamanhoVetor; pVetor++) {
-    cin >> vetor[pVetor];
+  int posicaoVetor;
+  for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
+    printf("%d ", vetor[posicaoVetor]);
   }
 }
 
@@ -46,10 +40,10 @@ void armazenarFrequencia(int vetor[], int vetorFrequencia[], int tamanhoVetor){
 
 void imprimirValoresUnicos(int vetor[], int vetorFrequencia[], int tamanhoVetor)
 {
-  int pVetor;
-  for (pVetor = 0; pVetor < tamanhoVetor; pVetor++) {
-    if(vetorFrequencia[pVetor] == 1){
-      cin >> vetor[pVetor];
+  int posicaoVetor;
+  for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
+    if(vetorFrequencia[posicaoVetor] == 1){
+      printf("%d ", vetor[posicaoVetor]);
 		}
     }
 }
@@ -62,12 +56,16 @@ int main(){
   srand(time(NULL));
   gerarVetores(vetor, vetorFrequencia, tamanhoVetor, valorMinimo, valorMaximo);
     
-  cout << "Os valores gerados aleatoriamente no vetor sao" << endl;
+  printf("Os valores gerados aleatoriamente no vetor são: \n");
   imprimirVetor(vetor, tamanhoVetor);
+    
   armazenarFrequencia(vetor, vetorFrequencia, tamanhoVetor);
-  cout << "Valores únicos no vetor" << endl;
+    
+  printf("\n\n");
+  printf("Valores únicos no vetor: \n");
   imprimirValoresUnicos(vetor, vetorFrequencia, tamanhoVetor);
-  
+  printf("\n\n");
 
   return 0;
   
+}
