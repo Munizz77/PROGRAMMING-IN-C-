@@ -1,7 +1,4 @@
-#include <iostream>
-#include<stdio.h>  
-
-using namespace std;
+#include<stdio.h>
 
 float valor;
 int teto(float valor);
@@ -9,13 +6,12 @@ int piso(float valor);
 
 int main(){
 	
-	cout << "Digite um valor em decimal" << endl;
-	cin >> valor;
+	printf("\nInforme um valor em decimal:");
+	scanf("%f", &valor);
 
-  	cin >> teto(valor);
- 	cin >> piso(valor);
+  	printf("%d\n",teto(valor));
+ 	printf("%d\n",piso(valor));
 }
-
 
 int piso(float valor){
     if(valor -(int)valor == 0){
@@ -24,6 +20,7 @@ int piso(float valor){
 		return teto(valor)+1;
 	}
 }
+
 int teto(float valor){
     int valorTeto;
     
