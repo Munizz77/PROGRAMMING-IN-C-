@@ -1,39 +1,50 @@
 #include <stdio.h>
-#include <iostream>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
 
-
-using namespace std;
-
-void gerarVetor(int vetor[], int tVetor){
-    int pVetor;
-    for (pVetor = 0; pVetor < tVetor; pVetor++) {
+void gerarVetor(int vetor[], int tvetor){
+    int vetorp;
+    for (vetorp = 0; vetorp < tvetor; vetorp++) {
         int num = rand() % 1000;
-        	vetor[pVetor] = num;
+        	vetor[vetorp] = num;
     }
 }
-
-void imprimirMenorValor(int vetor[], int tVetor){
+void imprimirMenorValor(int vetor[], int tvetor){
 	int menorValor = vetor[0], maiorValor = vetor[0];
-	int pVetor;
+	int vetorp;
 	
-	for(pVetor = 1; pVetor < tVetor; pVetor++){
-		if(menorValor > vetor[pVetor]){
-			menorValor = vetor[pVetor];
-		}else if (vetor[pVetor] > maiorValor){
-			maiorValor = vetor[pVetor];
+	for(vetorp = 1; vetorp < tvetor; vetorp++){
+		if(menorValor > vetor[vetorp]){
+			menorValor = vetor[vetorp];
+		}else if (vetor[vetorp] > maiorValor){
+			maiorValor = vetor[vetorp];
 		}
 	}
-
-	cout << "O maior valor do vetor é" << maiorValor << endl;
-	cout << "O menor valor do vetor é" << menorValor << endl;
+		
+	printf("\nO maior valor do vetor é: %d", maiorValor);
+	printf("\nO menor valor do vetor é: %d", menorValor);
 }
-void imprimirVetor(int vetor[], int tVetor)
+
+void imprimirVetor(int vetor[], int tamanhoVetor)
 {
-    int pVetor;
-    for (pVetor = 0; pVetor < tVetor; pVetor++) {
-        	cin >> vetor[pVetor]<< endl;
+    int posicaoVetor;
+    for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
+        	printf("%d ", vetor[posicaoVetor]);
     }
 }
 
+  
+int main(){
+    int tamanhoVetor = 50, vetor[tamanhoVetor];
+
+    srand(time(NULL));
+    gerarVetor(vetor, tamanhoVetor);
+    
+    printf("Todos os valores do vetor: \n");
+    imprimirVetor(vetor, tamanhoVetor);
+    
+    printf("\n\n");
+    imprimirMenorValor(vetor, tamanhoVetor);
+
+    return 0;
+}

@@ -1,33 +1,29 @@
-#include <iostream>
-#include<stdio.h>  
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-
-using namespace std;
 
 void gerarVetor(int vetor[], int tamanhoVetor, int valorMinimo, int valorMaximo){
     int posicaoVetor;
     for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
         int num =  valorMinimo + (rand() % (valorMaximo - valorMinimo));
-        	vetor[posicaoVetor] = num;
+        vetor[posicaoVetor] = num;
     }
 }
 
-void imprimirVetor(int vetor[], int tamanhoVetor)
-{
-    int posicaoVetor;
-    for (posicaoVetor = 0; posicaoVetor < tamanhoVetor; posicaoVetor++) {
-        	cin >> vetor[posicaoVetor];
-    }
+void imprimirVetor(int vetor[], int tamanhoVetor){
+  for(int i = 0; i < 20;posicaoVetor++){
+    printf("%d ", vetor[posicaoVetor]);
+  }
 }
 
 void imprimirValoresRepetidos(int vetor[], int tamanhoVetor){
 	int posicaoA, posicaoB;
 
 
-    for (posicaoA = 0; posicaoA < tamanhoVetor; posicaoA++) {
-        	for(posicaoB = posicaoA + 1; posicaoB < tamanhoVetor; posicaoB++){
-        		if(vetor[posicaoA] == vetor[posicaoB]){
-        			cin >>  vetor[posicaoB];
+    for (posicaoA = 0; posicaoA < 20; posicaoA++) {
+      for(posicaoB = posicaoA+1; posicaoB < 20;posicaoB++){
+        if(vetor[posicaoA] == vetor[posicaoB]){
+        	printf("%d ", vetor[posicaoB]);
 				}
 			}
     }
@@ -36,18 +32,16 @@ void imprimirValoresRepetidos(int vetor[], int tamanhoVetor){
   
 int main(){
 	
-    int tamanhoVetor = 20, vetor[tamanhoVetor];
-    int valorMinimo = 1, valorMaximo = 51;
+    int  vetor[20];
+    int min = 1, max = 51;
 
-    srand(time(NULL));
-    gerarVetor(vetor, tamanhoVetor, valorMinimo, valorMaximo);
+    srand( (unsigned)time(NULL) );
+    gerarVetor(vetor, 20, 1, 51);
     
-   cin >> "Os valores gerados sao" << endl;
-    imprimirVetor(vetor, tamanhoVetor);
-    
-    
-    cin >> "Valores repetidos no vetor: \n";
-        imprimirValoresRepetidos(vetor, tamanhoVetor);
+    printf("\nOs valores gerados aleatoriamente no vetor são: \n");
+    imprimirVetor(vetor, 20);
+    printf("\nValores repetidos no vetor: \n");
+    imprimirValoresRepetidos(vetor, 20);
 
 
     return 0;
