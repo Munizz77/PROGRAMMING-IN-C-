@@ -1,31 +1,24 @@
 #include <stdio.h>
-#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 
-using namespace std;
-
 int main(){
-
-	srand(time(NULL));
 	
-	int Vetort = 8, vetorInteiro[Vetort], Vetorp, ValoresMaiores = 0, soma = 0, somaTotal = 0; 
-    cout << "Os 8 valores gerando aleatoriamente entre 0 e 50 são:" << endl;
-	
-	for(Vetorp = 0; Vetorp < Vetort; Vetorp++){	
-		vetorInteiro[Vetorp] = rand() % 51;
-        "posica" << Vetorp <<vetorInteiro[Vetorp] << endl;				
-		if(vetorInteiros[Vetorp] > 30){
-			ValoresMaiores++;
-			vetorInteiro += vetorInteiro[Vetorp];
-		}
-		somaTotal += vetorInteiro[Vetorp];
+  srand( (unsigned)time(NULL) );
+	int vetorInteiros[8], i, 
+	valoresMaiores = 0, somaValores = 0, somaTudo = 0; 
+  printf("\nOs 8 valores gerando aleatoriamente entre 0 e 50 são:\n");
+	for(i = 0; i < 8; i++){
+		vetorInteiros[i] = rand() % 51;
+    printf("Posição: %d = %d\n", i, vetorInteiros[i]);
+		if(vetorInteiros[i] > 30){
+			valoresMaiores++;
+			somaValores += vetorInteiros[i];
+		}somaTudo += vetorInteiros[i];
 	}
-	
-	cin "\n";
-	cout << "A quantidade de valores maiores que 30 é" <<  ValoresMaiores << endl;
-	cout <<"A soma de todos valores maiores que 30 é" <<soma << end;
-	cout <<"A soma de todos os valores do vetor é" <<  somaTotal << end;
+	printf("\nA quantidade de valores maiores que 30 é: %d\n", valoresMaiores);
+	printf("A soma de todos valores maiores que 30 é: %d\n", somaValores);
+	printf("A soma de todos os valores do vetor é: %d\n", somaTudo);
 
 	return 0;
 }

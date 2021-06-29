@@ -1,21 +1,16 @@
 #include <stdio.h>
-#include <iostream>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
 
+int main(void) {
+  	
+  srand( (unsigned)time(NULL) );
 
-using namespace std;
-
-int main(){
-	
-	int vetorA[tVetor], tVetor = 20,  min = 97, pVetor, max = 123;
-    
-	srand(time(NULL));
-	cout << "Valores gerados com máscara do tipo inteiro" << vetorA[pVetor] << endl;
-
-	for(pVetor = 0; pVetor < tVetor; pVetor++){	
-		vetorA[pVetor] =  min + (rand() % (max - min));
-		cout << vetorA[pVetor]<< "  char de " << vetorA[pVetor]<< endl;
+	int vetorA[20], i;
+	printf("\nValores gerados aleatoriamente com máscara do tipo inteiro: \n");
+	for(i = 0; i < 20; i++){
+		vetorA[i] =  97 + (rand() % 25);
+		printf("\n%d Com máscara de char -> %C\n ", vetorA[i],vetorA[i]);
 	}
 	return 0;
 }

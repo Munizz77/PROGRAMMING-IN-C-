@@ -1,23 +1,19 @@
-#include <iostream>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-using namespace std;
 
 int main(){
+	
+	int ninicial = 2, nfinal = 20;
+	int tvetor = ((nfinal - ninicial)/2)+1;
+	int pares[tvetor], pvetor, valor = 0;
+	
+	for(pvetor = 0; pvetor < tvetor; pvetor++){
+		pares[pvetor] = valor + 2;
+		valor +=2;
+	}
 
-	int nstart = 2, nfinish = 20, tVetor = ((nfinish - nstart)/2)+1, vNPares[tVetor], pVetor, vElemento = 0;
-	
-	for(pVetor = 0; pVetor < tVetor; pVetor++){
-		vNPares[pVetor] = vElemento + 2;
-		vElemento +=2;
-	}
-	
-    cout << "Os numeros parede de 2 a 20 sao" << endl;
-	for(pVetor = 0; pVetor < tVetor; pVetor++){
-		cin >> vNPares[pVetor];
-	}
-		
+  printf("\nOs valores pares que vão do número 2 ao 20 são:\n");
+	for(pvetor = 0; pvetor < tvetor; pvetor++){
+		printf("%d\n", pares[pvetor]);
+	}		
 	return 0;
 }

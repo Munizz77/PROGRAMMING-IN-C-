@@ -1,32 +1,34 @@
 #include <stdio.h>
-#include <iostream>
-#include <time.h>
 #include <stdlib.h>
-
-using namespace std;
+#include <time.h>
 
 int main(){
 	
 	srand(time(NULL));
 	
-	int tVetor = 4, vBinario[tVetor], pVetor,
-	a1 = 2, a, x, vDecimal = 0;
+	int tamanhoVetor = 4, vetorBinario[tamanhoVetor], posicaoVetor,
+	base = 2, expoente, calculoExpo, valorDecimal = 0;
 
-	cout << "O Valor binario gerado foi :"<<endl;
-	for(pVetor = tVetor - 1; pVetor >= 0; pVetor--){
-		vBinario[pVetor] = rand() % 2;
-		cin >> vBinario[pVetor];
-		x = 1;
-		a = 1;
-		while(a <= pVetor){
-			x *= a1;
-			++a;
+	printf("Valor binário gerado aleatoriamente: ");
+	for(posicaoVetor = tamanhoVetor - 1; posicaoVetor >= 0; posicaoVetor--){
+		
+		vetorBinario[posicaoVetor] = rand() % 2;
+		
+		printf("%d", vetorBinario[posicaoVetor]);
+		
+		calculoExpo = 1;
+		expoente = 1;
+		while(expoente <= posicaoVetor){
+			calculoExpo *= base;
+			++expoente;
 		}
-		vDecimal += (vBinario[pVetor] * x);
+		
+		valorDecimal += (vetorBinario[posicaoVetor] * calculoExpo);
 	}
+
+	printf("\n");
 	
-	cin >> "\n";
-    cout << "Valor converido em decimal" <<  vDecimal << endl;
+	printf("Valor converido em decimal: %d\n", valorDecimal);
 	
 	
 	return 0;
